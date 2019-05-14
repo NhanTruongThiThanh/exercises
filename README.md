@@ -1,12 +1,18 @@
-How to use
+##Get started
+* Run `yarn install` for the first time to install package.
 
-Run `yarn install` to Install package
+##How to run
 
+#Exercise 1
+`yarn start:ex1`
 
-Run `yarn start:ex1` to check output store function and text function
+#Time Complexity
+Complexity for `store` function is: 0(n)
 
+Complexity for `load` function is: 0(n*m)
 
-Run `yarn start:ex3` to check input is a bill and output is teh net payable amount.
+#Exercise 2
+`yarn start:ex2`
 
-
-Run `yarn test` to test
+##How to test
+`yarn test`

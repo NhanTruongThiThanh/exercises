@@ -1,0 +1,27 @@
+{
+  "goodsType": [
+    {
+      "id": "goodType1",
+      "isGrocery": false,
+      "price": 100
+    },
+    {
+      "id": "goodType2",
+      "isGrocery": true,
+      "price": 100
+    },
+    {
+      "id": "goodType3",
+      "isGrocery": false,
+      "price": 100 
+    }
+  ],
+  "userType": {
+    "id": "001",
+    "isEmployee": true,
+    "isAffiliate": false,
+    "isCustomer": false,
+    "registerDate": "2016",
+    "isNoneOfThem": false
+  }
+}

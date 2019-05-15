@@ -4,28 +4,38 @@ import { GoodsType } from './good';
 import data from '../json/ex-3.json';
 
 describe('Test Excercise 3', () => {
+  let goodsTypes = [];
+  for (var i = 0; i < data.goodsType.length; i++) {
+    const goodsType = new GoodsType(data.goodsType[i]);
+    goodsTypes.push(goodsType);
+  }
+
   it('Should return right calcNetPaymentAmount, if have bill', () => {
-    const bill = new Bill(data.goodsType, data.userType);
+    const user = new User(data.userType);
+    let bill = new Bill(goodsTypes, user);
     const calcNetPaymentAmount = bill.calcNetPaymentAmount();
     const expected = 240;
     expect(calcNetPaymentAmount).toEqual(expected);
   });
   it('Should return right totalBill', () => {
-    const bill = new Bill(data.goodsType, data.userType);
+    const user = new User(data.userType);
+    let bill = new Bill(goodsTypes, user);
     const calcTotalBill = bill.calcTotalBill();
     const expected = 300;
     expect(calcTotalBill).toEqual(expected);
   });
 
   it('Should return right totalAmountDiscount', () => {
-    const bill = new Bill(data.goodsType, data.userType);
+    const user = new User(data.userType);
+    let bill = new Bill(goodsTypes, user);
     const calcTotalAmountDisCount = bill.calcTotalAmountDisCount();
     const expected = 200;
     expect(calcTotalAmountDisCount).toEqual(expected);
   });
 
   it('Should return right calcAmountDisCounted, discount 30% if user is an Employee', () => {
-    const bill = new Bill(data.goodsType, data.userType);
+    const user = new User(data.userType);
+    let bill = new Bill(goodsTypes, user);
     const calcAmountDisCounted = bill.calcAmountDisCounted();
     const expected = 60;
     expect(calcAmountDisCounted).toEqual(expected);
@@ -40,7 +50,8 @@ describe('Test Excercise 3', () => {
         "registerDate": "2016",
         "isNoneOfThem": false
     };
-    const bill = new Bill(data.goodsType, data.userType);
+    const user = new User(data.userType);
+    const bill = new Bill(data.goodsType, user);
     const calcAmountDisCounted = bill.calcAmountDisCounted();
     const expected = 20;
     expect(calcAmountDisCounted).toEqual(expected);
@@ -55,7 +66,8 @@ describe('Test Excercise 3', () => {
         "registerDate": "2016",
         "isNoneOfThem": false
     };
-    const bill = new Bill(data.goodsType, data.userType);
+    const user = new User(data.userType);
+    let bill = new Bill(goodsTypes, user);
     const calcAmountDisCounted = bill.calcAmountDisCounted();
     const expected = 10;
     expect(calcAmountDisCounted).toEqual(expected);
@@ -70,7 +82,8 @@ describe('Test Excercise 3', () => {
         "registerDate": "2018",
         "isNoneOfThem": false
     };
-    const bill = new Bill(data.goodsType, data.userType);
+    const user = new User(data.userType);
+    let bill = new Bill(goodsTypes, user);
     const calcAmountDisCounted = bill.calcAmountDisCounted();
     const expected = 0;
     expect(calcAmountDisCounted).toEqual(expected);
@@ -85,7 +98,8 @@ describe('Test Excercise 3', () => {
         "registerDate": "",
         "isNoneOfThem": true
     };
-    const bill = new Bill(data.goodsType, data.userType);
+    const user = new User(data.userType);
+    let bill = new Bill(goodsTypes, user);
     const calcAmountDisCounted = bill.calcAmountDisCounted();
     const expected = 10;
     expect(calcAmountDisCounted).toEqual(expected);

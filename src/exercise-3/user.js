@@ -1,12 +1,14 @@
 
-export class User {
-    constructor(id, isEmployee, isAffiliate, isCustomer, registerDate, isNoneOfThem) {
-        this.id = id;
-        this.isEmployee = isEmployee;
-        this.isAffiliate = isAffiliate;
-        this.isCustomer = isCustomer;
-        this.registerDate = registerDate;
-        this.isNoneOfThem = isNoneOfThem;
+class User {
+    constructor(userType) {
+        this.id = userType.id;
+        this.isEmployee = userType.isEmployee;
+        this.isAffiliate = userType.isAffiliate;
+        this.isCustomer = userType.isCustomer;
+        this.registerDate = userType.registerDate;
+        this.isNoneOfThem = userType.isNoneOfThem;
     }
 }
+
+export default User;
 

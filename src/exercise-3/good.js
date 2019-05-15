@@ -1,7 +1,8 @@
 export class GoodsType {
-    constructor(id, isGrocery, price) {
-        this.id = id;
-        this.isGrocery = isGrocery;
-        this.price = price;
+    constructor(goodsType) {
+        this.id = goodsType.id;
+        this.isGrocery = goodsType.isGrocery;
+        this.price = goodsType.price;
     }
 }
+

@@ -1,5 +1,3 @@
-import GoodsType from './good';
-import User from './user';
 import { 
     default_discount,
     discount_employee,
